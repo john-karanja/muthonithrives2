@@ -1,0 +1,30 @@
+{% extends "templates/includes.html" %}
+{% block content %}
+
+
+      <h1 style="color:red"><small>New blog</small></h1>
+      <hr>
+         <form action="/new" method="post">
+
+      <h5><span class="glyphicon glyphicon-time"></span> Posting as {{blogger}}.</h5>
+      <h5><span class="label label-success">Blog content</span></h5><br>
+             <p><textarea name="title" class="form-control" rows="1" style="color:#3BB9FF" placeholder="Blog title" required></textarea></p>
+             <p><textarea name="image" class="form-control" rows="1" style="color:#3BB9FF" placeholder="display image link"></textarea></p>
+            <textarea name="content" id="editor1" rows="10" cols="80">
+
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+       <button   class="form-control" type="submit" value="Create">Publish</button>
+      </form>
+        <hr>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

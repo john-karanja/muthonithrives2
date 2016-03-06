@@ -1,0 +1,96 @@
+{% extends "templates/includes.html" %}
+{% block content %}
+
+
+    <hr>                        <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#newblogger">New Blogger</button>
+{{notification}}
+<div class="table-responsive">
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+          <th>username</th>
+          <th>Email</th>
+          <th>Date</th>
+          <th>Privilege</th>
+        <th>status</th>
+          <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+{% for bl in blogger %}
+      <tr>
+        <td>{{bl.fname}} {{bl.lname}}</td>
+          <td>{{bl.username}}</td>
+        <td>{{bl.email}}</td>
+        <td>{{bl.date.strftime('%d-%B-%Y')}}</td>
+        <th>{{bl.privilege}}</th>
+        <td>{{bl.status}}</td>
+          {% if bl.status == "suspended" %}
+          <form method="post" action="blogger">
+        <th><button type="submit" name="activate" value="{{bl.email}}" class="btn btn-default btn-sm"> activate </button></th>
+           </form>
+          {% elif bl.status == "active" %}
+          <form method="post" action="blogger">
+        <th><button type="submit" name="suspend" value="{{bl.email}}" class="btn btn-success btn-sm"> suspend</button></th>
+          </form>
+          {% else %}
+          <form method="post" action="blogger">
+        <th><button type="submit" name="error" value="{{bl.email}}" class="btn btn-danger btn-sm"> Error!! </button></th>
+              </form>
+          {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+    </div>
+
+        <hr>
+
+
+
+                <!-- Modal -->
+                <div id="newblogger" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">New blogger</h4>
+                      </div>
+                        <form action="/blogger" method="post">
+                      <div class="modal-body">
+                          <label>First Name</label>
+                          <input class="form-control" name="fname" type="text" required value="" placeholder="first name">
+                          <label>Last Name</label>
+                          <input class="form-control" name="lname" type="text" required value="" placeholder="last name">
+                          <label>Email</label>
+                          <input class="form-control" type="email" value="" name="email" placeholder="email" required>
+                          <label>username</label>
+                          <input class="form-control" type="text" value="" name="username" placeholder="username" required>
+
+                          <label>Privilege</label>
+                            <select name="privilege" class="form-control" id="sel1" required>
+                                <option>user</option>
+                                <option>admin</option>
+                            </select>
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" name="new" value="1" class="btn btn-success">add</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                      </div>
+                            </form>
+                    </div>
+
+                  </div>
+                </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+
+
+
+{% extends "templates/includes.html" %}
+{% block content %}
+
+{% for b in blogsl %}
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <h4 style="color:#3BB9FF">{{b.title}}</h4>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by {{b.blogger}}, {{b.date.strftime('%d-%B-%Y')}}.</h5>
+      <h5><span class="label label-success">blog</span></h5><br>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-8">
+
+              <p><blockquote><h5 style="font-style: italic;"><a href="/blog?title={{b.title}}" name="title" value="{{b.title}}">{{b.title}}</a></h5></blockquote></p>
+              <hr></div>
+          <div class="col-xs-6 col-md-4">
+              <img src="static/images/test.png" class="img-responsive" alt="Responsive image">
+          </div>
+        </div>
+
+      <h3>Leave a Comment:</h3>
+      <form action="/" method="post" role="form">
+        <div class="form-group">
+          <textarea name="comment" class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" name="blogid" value="{{b.key.id()}}" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+
+      <p><span class="badge">{{comment.count()}}</span> Comments:</p><br>
+      {% for c in comment %}
+
+      <div class="row">
+        {% if c.blogid %}
+        <div class="col-sm-2 text-center">
+          <img src="static/images/user.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>{{c.person}} <small>{{ c.date.strftime('%d-%B-%Y') }}</small></h4>
+          <p>{{c.comment}}</p>
+            <br>
+        </div>
+        {% else %}
+        {% endif %}
+              <br>
+        </div>
+        {% endfor %}
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

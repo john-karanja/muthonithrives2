@@ -1,0 +1,50 @@
+{% extends "templates/includes.html" %}
+{% block content %}
+
+
+    <hr>
+                <a href="/new">New Blog</a>
+<div class="table-responsive">
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+          <th>Blogger</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+{% for bl in blogset %}
+      <tr>
+        <td>{{bl.title}}</td>
+        <td>{{bl.blogger}}</td>
+        <td>{{bl.date.strftime('%d-%B-%Y')}}</td>
+        <th>{{bl.status}}</th>
+       {% if bl.status == "deactive" %}
+          <form method="post" action="blogs">
+        <th><button type="submit" name="publish" value="{{bl.title}}" class="btn btn-default btn-sm"> Publish </button></th>
+           </form>
+
+            {% elif bl.status == "active" %}
+          <form method="post" action="blogs">
+        <th><button type="submit" name="deactivate" value="{{bl.title}}" class="btn btn-success btn-sm"> Active</button></th>
+              </form>
+
+          {% else %}
+
+          <form method="post" action="blogs">
+        <th><button type="submit" name="error" value="{{bl.title}}" class="btn btn-danger btn-sm"> Error!! </button></th>
+              </form>
+          {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,479 @@
+body {
+    
+    font-family: 'Roboto', sans-serif, sans, helvetica;
+}
+
+/* NavBar
+=========================
+*/
+
+.navbar-default {
+border-color: rgba(30, 27, 31, 0.9);
+min-height: 80px;
+margin-bottom: 0px;
+border: 1px solid transparent;
+border-radius: 0px;
+box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.2);
+background-color: rgba(255, 255, 255,0.92);
+}
+.navbar-right {
+  margin-top: 20px;
+  font-weight: 700;
+  
+}
+
+/* Jumbotron
+=========================
+*/
+
+.jumbotron {
+  background-color: #25AAE1;
+  background-image: url('../img/main-bg.png');
+  background-repeat: no-repeat;
+  background-position: 200% 100%;
+  padding: 100px;
+  
+}
+
+/* Logos, Images & Icons
+=========================
+*/
+
+
+.main-logo {
+  width: 141px;
+  height: 87px;
+  margin-top: -30px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url('../img/nims-logo.png') no-repeat;
+  background-size: 100%;
+  float: left;
+}
+.featured img {
+  width: 125px;
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+}
+/* Typography
+=========================
+*/
+h1 {
+  font-size: 2.25em;
+}
+h2 {
+  font-size: 1.875em;
+}
+h3{
+  font-size: 1.500em;
+}
+.center {
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.95em;
+  color: #A6AFB2;
+  line-height: 1.7;
+  clear: left;
+}
+
+
+.footer h3 {
+  color: #A6AFB2;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-family: 'Roboto',sans-serif;
+}
+
+.footer img {
+  margin-bottom: 11px;
+}
+
+p.copyright {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 2.938em;
+}
+
+
+
+.main-cont p, .how-it-works p {
+  color: #404040;
+  line-height: 1.5;
+  font-size: 1.25em;
+  font-weight: 300;
+}
+
+
+
+
+.lead {
+  color: ghostwhite;
+  font-weight: 200;
+  font-size: 1.313em
+}
+
+.ft-copy {
+ padding: 50px;
+}
+.benefits p {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.titles {
+  padding-top: -0px;
+  padding-bottom: 50px;
+}
+.titles hr {
+  border-color: #ccc;
+  max-width: 40%;
+}
+ .footer {
+    text-align: center
+  }
+li.nav-signup {
+  border: 3px solid #25ACE4;
+  border-radius: 30px;
+  padding: 0px 10px;
+  margin-top: -4px;
+  transition:  background-color 0.6s, font-size 0.6s;
+}
+li.nav-signup:hover {
+  color: #fff;
+  background-color: #25ACE4;
+  font-size: 1.3em;
+}
+
+/* Buttons
+=========================
+*/
+
+button.btn.btn-primary.btn-lg {
+  width: 50%;
+  font-size: 1.5em;
+  font-weight: 700;
+  background-color: transparent;
+  color: #777;
+  border-color: #777;
+  border-width: 2px;
+  border-radius: 10px;
+}
+button.btn.btn-primary.btn-lg:hover {
+  border-color: #ccc;
+  color: #ccc;
+}
+.read-more .fa {
+  padding-left: 10px;
+}
+.signup-btn button {
+width: 93%;
+border-radius: 3px;
+padding: 13px;
+font-size: 1.8em;
+font-weight: 700;
+background-color: #E75A3F;
+color: #fff;
+  transition: box-shadow 0.6s;
+}
+.signup-btn button:hover {
+  color: #fff;
+  box-shadow: 3px 3px 2px 1px rgba(0,0,0,0.5);
+}
+.signup-btn button:active {
+  color: #fff;
+}
+/* Layout
+=========================
+*/
+
+
+
+
+.sec {
+    background-color: #f4f4f4;
+}
+.how-it-works .icn {
+  text-align: center;
+}
+
+.icn .fa {
+  font-size: 5em;
+  color: #25AAE1;
+}
+
+.main-cont {
+  padding: 3.83729854183%;
+}
+
+.winners {
+  text-align: center;
+}
+
+.winners_text p{
+  padding: 20px 0px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 400;
+
+}
+.winners_img img, .rslides, .winners_text p {
+  max-width: 86.1111111111%;
+}
+.winners_img img {
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.22);
+}
+.featured {
+  padding: 50px;
+  text-align: center;
+}
+.features .feature{
+  display: inline-block;
+}
+.feature {
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+.feature .fa, .feature .glyphicon {
+  font-size: 2em;
+  border: 1px solid  transparent;
+  border-radius: 50%;
+  background-color: #25AAE1;
+  color: #fff;
+  padding: 20px;
+}
+.feature p {
+  padding-bottom: 10%;
+}
+
+
+
+
+
+/* Form Layout
+=========================
+*/
+
+
+/* Mailchimp
+=========================
+*/
+
+/* MailChimp Form Embed Code - Slim - 08/17/2011 */
+#mc_embed_signup form {  position:relative; text-align: center; padding:10px 0 10px 3%;margin-right: 0; margin-left: -9%}
+#mc_embed_signup h2 {font-weight:bold; padding:0; margin:15px 0; font-size:1.4em;}
+#mc_embed_signup input {border:1px solid #999; -webkit-appearance:none;}
+#mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
+#mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
+#mc_embed_signup input:focus {border-color:#333;}
+#mc_embed_signup .button {clear:both; background-color: #aaa; border: 0 none; border-radius:4px; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: bold; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding:0; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: auto;}
+#mc_embed_signup .button:hover {background-color:#777;}
+#mc_embed_signup .small-meta {font-size: 11px;}
+#mc_embed_signup .nowrap {white-space:nowrap;}     
+#mc_embed_signup .clear {clear:none; display:inline;}
+
+#mc_embed_signup label {display:block; font-size:16px; padding-bottom:10px; font-weight:bold;}
+#mc_embed_signup input.email {display:inline-block; padding:8px 0; margin:0 -10px 10px 0; text-indent:5px; height: 50px; width:60%;  min-width:130px; border-radius: 2px; border-color: rgba(0,0,0,0.2);}
+#mc_embed_signup input.button {display:inline-block; width:30%; margin:0 0 10px 0; min-width:90px; height: 50px; background-color: rgb(231,90,63); border-radius: 2px;}
+
+#mc_embed_signup div#mce-responses {float:left; top:-1.4em; padding:0em .5em 0em .5em; overflow:hidden; width:90%;margin: 0 5%;}
+#mc_embed_signup div.response {margin:1em 0; padding:1em .5em .5em 0; font-weight:bold; float:left; top:-1.5em; z-index:1; width:80%; }
+#mc_embed_signup #mce-error-response {display:none;}
+#mc_embed_signup #mce-success-response {color:#529214; display:none;}
+#mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
+
+
+
+
+/* Slides Styles
+=========================
+*/
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0px auto;
+  margin-top: 30px;
+  }
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
+  
+.rslides p {
+  background-color: rgba(0,0,0,0.3);
+  color: #fff;
+  padding: 3px 20px;
+  font-weight: 300;
+}
+.rslides img, .caption {
+  border-radius: 2px
+}
+
+
+/* Media Queries
+=========================
+*/
+
+@media screen and (min-width: 1200px) {
+  .jumbotron .lead-text {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .jumbotron .lead-text {
+    width: 100%;
+  }
+  .jumbotron .lead-text h1 {
+    font-size: 2.2em;
+  }
+  .jumbotron {
+    background-position: 100% 100%;
+  }
+  .jumbotron .hero img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .jumbotron {
+    background-position: 90% 10%;
+  }
+
+  .ft-copy {
+    padding-top: 12px;
+  }
+  .main-logo {
+    width: 145px;
+  }
+  .jumbotron .lead-text h1 {
+    font-size: 1.9em;
+  }
+  .jumbotron .lead-text p {
+    font-size: 1.3em;
+  }
+  .jumbotron .hero img {
+    max-width: 120%;
+  }
+@media screen and (max-width: 830px) {
+  .jumbotron .hero img {
+    max-width: 130%;
+  }
+}
+@media screen  and (max-width: 785px) {
+  .jumbotron .hero img {
+    max-width: 135%;
+  }
+}
+ @media screen and  (max-width: 767px) {
+   .navbar-header button {
+     margin-top: 25px;
+   }
+   .how-it-works .fa, .feature p, .featured img {
+     padding: 20px 0px;
+   }
+   .jumbotron .lead-text {
+     width: 70%;
+     margin: 0 auto;
+   }
+    #mc_embed_signup input.email {display:inline-block; padding:8px 0; margin:0 -10px 10px 0; text-indent:5px; height: 50px; width:50%;  min-width:130px; border-radius: 2px; border-color: rgba(0,0,0,0.2);}
+    #mc_embed_signup input.button {display:inline-block; width:20%; margin:0 0 10px 0; min-width:90px; height: 50px; background-color: rgb(231,90,63); border-radius: 2px;}
+    #mc_embed_signup form {  position:relative; text-align: center; padding:10px 0 10px 3%;margin-right: 0; margin-left: -4%}
+   .jumbotron .hero {
+     width: 90%;
+   }
+   .winners_img img, .rslides {
+     max-width: 100%;
+   }
+   .winners_text p {
+     font-size: 1.1em;
+
+   }
+   .read-more button.btn.btn-primary.btn-lg {
+     width: 70%;
+   }
+ }
+@media screen and (max-width: 540px) {
+  .winners_text p {
+    max-width: 100%;
+    font-size: 1em;
+    line-height: 1.7
+  }
+}
+@media screen and (max-width: 630px) {
+  .jumbotron .lead-text {
+    width: 100%;
+    margin: 0 auto;
+  }
+  #mc_embed_signup input.email {display:inline-block; padding:8px 0; margin:0 -10px 10px 0; text-indent:5px; height: 50px; width:65%;  min-width:130px; border-radius: 2px; border-color: rgba(0,0,0,0.2);}
+  #mc_embed_signup input.button {display:inline-block; width:30
+    5%; margin:0 0 10px 0; min-width:90px; height: 50px; background-color: rgb(231,90,63); border-radius: 2px;}
+  #mc_embed_signup form {  position:relative; text-align: center; padding:10px 0 10px 3%;margin-right: 0; margin-left: -4%}
+}
+@media screen and (max-width: 640px) {
+  .titles hr {
+    max-width: 60%;
+  }
+}
+@media screen and (max-width: 462px) {
+  .jumbotron .lead-text {
+    width: 120%;
+    margin: 0 auto;
+  }
+  .jumbotron .lead-text h1 {
+    font-size: 1.5em;
+  }
+  .jumbotron .lead-text p {
+    font-size: 1.2em;
+  }
+  #mc_embed_signup input.email {display:inline-block; padding:8px 0; margin:0 10px 10px 0; text-indent:5px; height: 50px; width:100%;  min-width:130px; border-radius: 2px; border-color: rgba(0,0,0,0.2);}
+  #mc_embed_signup input.button {display:inline-block; width:100%; margin:0 0 10px 0; min-width:90px; height: 50px; background-color: ; border-radius: 2px;}
+  #mc_embed_signup form {  position:relative; text-align: center; padding:10px 0 10px 3%;margin-right: 0;}
+}
+@media screen and (max-width: 378px) {
+  .jumbotron .lead-text {
+    width: 140%;
+  }
+  .jumbotron .hero {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 370px) {
+  .titles hr {
+    max-width: 80%;
+  }
+}
+
+  
+  
+

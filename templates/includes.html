@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>muthoni thrives</title>
+  <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="//cdn.ckeditor.com/4.5.6/full/ckeditor.js"></script>
+  <script>
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71080839-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;}
+    }
+  </style>
+
+
+
+
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+        <br/>
+      <h4 style="color:red">Muthoni Thrives</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="/">Home</a></li>
+        {% if regblogger == 1 %}
+        <li><a href="/new">New</a></li>
+        <li><a href="/edit">Edit</a></li>
+        <!--<li><a href="/gallery">Gallery</a></li>-->
+        <li><a href="/blogger">Bloggers</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/blogs">Blogs</a></li>
+        {% endif %}
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+       <div>
+
+         {% for b in blog %}
+           <a href="/blog?title={{b.title}}" name="title" value="{{b.title}}">{{b.title}}</a>
+         <br/>
+         {% endfor %}
+
+         {% for b in blogs2edit %}
+           <form action="/edit" method="get" >
+             <button type="submit" name="id" value="{{b.key.id()}}">{{b.title}}</button>
+               </form>
+         {% endfor %}
+         <hr>
+         <hr>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+
+
+    {% block content %}
+
+      {% endblock %}
+
+
+        <footer class="container-fluid" style="background-color:white">
+          <p style="color:red" align="center">Blog Designed by : <a href="http://webdev254.appspot.com" target="_blank">www.webdev254.appspot.com</a></p>
+        </footer>
+</div></div></div>
+</body>
+</html>

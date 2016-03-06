@@ -1,0 +1,197 @@
+{% extends "templates/includes.html" %}
+{% block content %}
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">            <div>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Trial 1 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-2198066183977105"
+                         data-ad-slot="5281039076"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+            </div>
+              <br/>
+              <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#newimg">add image</button>
+              <br/><br/>
+              <!-- START DEFAULT DATATABLE -->
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>image</th>
+                                                <th>blog</th>
+                                                <th>link</th>
+                                                <th>block</th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                        {% for i in image %}
+                                                <tr>
+                                                    <td>{{i.name}}</td>
+                                                    <td>{{i.blog}}</td>
+                                                    <td>{{i.link}}</td>
+                                                    <td>{{i.block}}</td>
+                                                </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END DEFAULT DATATABLE -->
+          </div>
+          <div class="col-xs-12 col-md-12">            <div>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Trial 1 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-2198066183977105"
+                         data-ad-slot="5281039076"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+            </div>
+              <br/>
+          <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#newvideo">New Video</button>
+              <br/><br/>
+                   <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>video</th>
+                                                <th>blog</th>
+                                                <th>link</th>
+                                                <th>block</th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                        {% for v in video %}
+                                                <tr>
+                                                    <td>{{v.name}}</td>
+                                                    <td>{{v.blog}}</td>
+                                                    <td>{{v.link}}</td>
+                                                    <td>{{v.block}}</td>
+                                                </tr>
+                                        {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+              </div>
+
+            </div>
+                        <!-- END DEFAULT DATATABLE -->
+
+
+                              <!-- Modal -->
+                <div id="newimg" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">New image</h4>
+                      </div>
+                        <form action="/gallery" method="post">
+                      <div class="modal-body">
+                          <label>Image name</label>
+                          <input class="form-control" name="name" type="text" required value="" placeholder=" image name">
+                          <label>Link</label>
+                          <input class="form-control" name="link" type="text" required value="" placeholder=" http://www.youtube.com/embed/XGSy3_Czz8k">
+                          <label>Blog</label>
+                           <select name="blog" class="form-control"  required>
+                               <option disabled>Select blog to embed image</option>
+                               {% for b in blog %}
+                                <option>{{b.title}}</option>
+                               {% endfor %}
+                            </select>
+                          <label>block</label>
+                            <select name="block" class="form-control" required>
+                                <option disabled>Select block to embed image</option>
+                                <option>block0</option>
+                                <option>block1</option>
+                                <option>block2</option>
+                                <option>block3</option>
+                                <option>block4</option>
+                            </select>
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" name="newimg" value="1" class="btn btn-success">add</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                      </div>
+                            </form>
+                    </div>
+
+                  </div>
+                    </div>
+
+              <!-- End Modal -->
+
+
+                              <!-- Modal -->
+                <div id="newvideo" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">New video</h4>
+                      </div>
+                        <form action="/gallery" method="post">
+                      <div class="modal-body">
+                         <label>Name</label>
+                          <input class="form-control" name="name" type="text" required value="" placeholder="video name">
+                             <label>Link</label>
+                          <input class="form-control" name="link" type="text" required value="" placeholder=" http://www.youtube.com/embed/XGSy3_Czz8k">
+                          <label>Blog</label>
+                           <select name="blog" class="form-control"  required>
+                                <option disabled>select blog</option>
+                                {% for b in blog %}
+                                <option>{{b.title}}</option>
+                                {% endfor %}
+                            </select>
+
+                          <label>block</label>
+                            <select name="block" class="form-control" required>
+                                <option disabled>Select block</option>
+                                <option>block0</option>
+                                <option>block1</option>
+                                <option>block2</option>
+                                <option>block3</option>
+                                <option>block4</option>
+                            </select>
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" name="newvideo" value="1" class="btn btn-success">add</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                      </div>
+                            </form>
+                    </div>
+
+                  </div>
+
+                    </div>
+                    </div>
+
+              <!-- End Modal -->
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "templates/includes2.html" %}
+{% block content %}
+
+
+      <div class="row">
+            <div class="col-md-11 col-md-offset-1">
+                <h3 style="color:#3BB9FF">{{blogsl.title}}</h3> <!---<a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="Aboue_">Tweet</a>-->
+            <div align="justify" >
+                {{blogsl.content}}
+            </div>
+               <!-- <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="Aboue_">Tweet</a> -->
+            </div>
+      </div>
+
+
+
+ <hr>
+<div align="left">
+
+      <h4>Leave a Comment:</h4>
+      <form role="form" method="post" action="blog">
+        <div class="form-group">
+          <textarea name="comment" class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" value="{{blogsl.key.id()}}" name="blogid" class="btn btn-success">Post</button>
+      </form>
+      <br><br>
+
+      <p align="left"><span class="badge">{{comment.count()}}</span> Comments:</p><br>
+{% for c in comment %}
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2 text-center">
+          <img src="static/images/logo2.PNG" class="img-circle" height="45" width="45" alt="image">
+        </div>
+        <div class="col-sm-6">
+          <h4>{{c.person}} <small>{{ c.date.strftime('%d-%B-%Y') }}</small></h4>
+          <p>{{c.comment}} <br>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

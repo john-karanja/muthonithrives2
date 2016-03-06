@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Muthoni Thrives</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71080839-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <style>
+  body {
+
+      background: transparent url("static/images/");
+      background-repeat: no-repeat  fixed 100% 100%;
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+  }
+
+  #headdiv {
+      background: transparent url("static/images/logo.PNG");
+      background-repeat: no-repeat;
+      background-size: 30% 100%;
+      background-position: center;
+      }
+
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 {
+      background-color: #FFFFFF; /* */
+      color: #ffffff;
+  }
+  .bg-2 {
+      background-color: #3db2e1; /* Light Blue */
+      color: #ffffff;
+  }
+  .bg-3 {
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 {
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+        }
+  .bg-5 {
+      background-color: #3BB9FF; /* twitter blue */
+      color: #3BB9FF;
+  }
+  .container-fluid {
+      padding-top: 30px;
+      padding-bottom: 30px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+
+  #nav {
+    line-height:30px;
+    border-style: solid;
+    border-color: #3BB9FF #FFFFFF #FFFFFF #FFFFFF;
+    background-color:#FFFFFF;
+    height:300px;
+    width:200px;
+    float:left;
+    padding:30px;
+}
+   #image {
+      height:50%;
+      }
+   #heading {
+      height:50%;
+      }
+
+   #btitle {
+      height:75%;
+      }
+   #owner {
+      height:25%;
+      }
+
+  #topblogs {
+        padding: 30px;
+        border-style: solid;
+        border-color: #FFFFFF #f5f6f7 #FFFFFF #f5f6f7;
+      }
+  </style>
+   <link rel="stylesheet" href="static/menu/styles.css">
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   <script src="static/menu/script.js"></script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+<div id="headdiv" class="container-fluid text-center">.
+   <!--- <img src="static/images/logo.PNG" class="img-responsive margin" alt="Image" style="width:150px;height:100px;"> -->
+  <h1 align="right" style="color:#3BB9FF"></h1><br/><br/>
+</div>
+
+
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='/'>Home</a></li>
+   <li><a href='/blog'>Blogs</a></li>
+   <li><a href='#'>About blog</a></li>
+   <li><a href='#'>Contact</a></li>
+   <li><a href='/new'>Blogger</a></li>
+</ul>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-0">
+      <!-- Third Container (Grid) -->
+
+
+<div class="container-fluid bg-3 text-center">
+  <div class="row">
+
+    {% block content %}
+
+      {% endblock %}
+
+  </div>
+</div>
+
+  </div>
+  <div class="col-md-4 col-md-offset-0" id="topblogs">
+      <div class="row">
+      <h1 style="color:#3BB9FF">TOP BLOGS</h1><br/>
+
+
+          <!--<a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="Aboue_">Tweet</a> -->
+
+          <a href="https://twitter.com/intent/tweet?button_hashtag=MuthoniThrives" class="twitter-hashtag-button" data-related="Aboue_">Tweet #MuthoniThrives</a>
+
+   {% for b in blog %}
+    <h5><a href="/blog?title={{b.title}}">{{b.title}}</a></h5><hr>
+    {% endfor %}
+
+
+          <h2 style="color:#3BB9FF">About This Blog</h2>
+
+
+
+        <p> <h6 style="color:#000000" align="justify">Here is where I chart my growth as an individual in all areas of life, i.e Physically, Spiritually,
+
+        Emotionally and Mentally.<br/> I want to challenge myself to be better than I was yesterday so that I
+
+        can be all that I am meant to be tomorrow.<hr>
+
+
+
+        This is also a safe space for anyone who is looking to start their life  journey (the one you get to
+
+        design for yourself and live it on your own terms and screw everyone who feels otherwise), or
+
+        those who are already on it or for those who logged off and would like to get back on, we can
+
+        collectively help each other to be all that we can and more.<hr>
+
+        Lastly but most importantly it is a blog where we can have fun, laugh at ourselves and take a
+
+        breather when it all gets too much.<hr>
+
+        Now that you are here.... Welcome!
+
+      </h6></p>
+
+</div>
+
+
+      </div>
+</div>
+
+
+</div>
+</div>
+<!-- Footer -->
+<footer class="container-fluid bg-2 text-center">
+  <p> Designed by: <a href="http://www.webdev254.appspot.com">Web developer 254</a></p>
+</footer>
+</body>
+</html>

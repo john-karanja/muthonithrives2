@@ -1,0 +1,394 @@
+
+/*
+=============================
+  Body
+=============================
+*/
+body {
+  font-family: 'Roboto', sans, sans-serif, helvetica;
+  background-color: #f5f5f5;
+}
+body.signup-pages {
+  padding-top: 70px;
+  background-color: #fafafa;
+}
+
+
+/*
+=============================
+  Logos & Icons
+=============================
+*/
+.main-logo {
+  width: 141px;
+  height: 87px;
+  margin-top: -45px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url('../img/nims-logo.png') no-repeat;
+  background-size: 100%;
+
+}
+
+/*
+=============================
+  Navabr
+=============================
+*/
+
+.navbar-default {
+  background-color: #fff;
+  border-radius: 0px;
+  border: #fff;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+/*
+=============================
+  Forms & Form Layouts
+=============================
+*/
+.form-wrapper {
+  border: 1px solid #fff;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  box-shadow: 1px 3px 3px 1px rgba(0,0,0,0.2);
+}
+.form-wrapper.form-wrapper-top {
+  background-color: #F8F8F8;
+  height: 0px;
+  margin-bottom: 1px;
+  border-color: #f8f8f8;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);
+}
+.form-wrapper.signup {
+  max-width: 70%;
+  border-top: 3px solid rgb(37, 170, 225);
+}
+.form-wrapper.signup.login {
+  max-width: 40%;
+}
+.form-wrapper.packages {
+  max-width: 80%;
+  padding: 20px;
+  border-radius: 0px;
+  margin-top: 0px;
+  text-align: center;
+  color: #fff;
+  
+}
+.form-wrapper.packages.package-number {
+  background-color: #1D9BD0;
+  border-color: #1D9BD0;
+  font-size: 1em;
+}
+.form-wrapper.packages.package-price h1 {
+  font-size: 3.5em;
+}
+.form-wrapper.packages.package-price span {
+  font-size: 0.5em
+}
+.form-wrapper.packages.package-price h2 {
+  font-size: 1.3em;
+  margin-top: -12px;
+}
+.form-wrapper.packages.package-amount p {
+  font-size: 1.3em;
+}
+.form-wrapper.packages.package-price {
+  background-color: #1A8BB9;
+  border-color: #1A8BB9;
+}
+.form-wrapper.packages.package-amount {
+  color: #777;
+}
+
+input[type] {
+  border-radius: 1px;
+}
+.search input, .search button{
+  height: 45px;
+}
+.search .input-group {
+  width: 67.5%;
+  margin: 0 auto;
+}
+.search {
+  padding: 3.75939849624% 0px;
+}
+
+.search.form {
+  display: inline-block;
+  padding: 0;
+  width: 100%;
+}
+.checkbox.form-wrapper {
+  width: 100%;
+  margin-bottom: 19px;
+  box-shadow: none;
+  border: 1px solid;
+  padding: 10px;
+}
+
+/*
+=============================
+  Typography
+=============================
+*/
+
+.navbar-nav li a {
+  font-weight: 700;
+}
+.welcome p {
+  text-align: center;
+  font-size: 2em;
+  color: #777;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.btn-group button {
+  font-size: 1.1em;
+  font-weight: 700;
+}
+.new-payment.make h2, .new-payment.make h3 {
+  font-weight: 300;
+  font-size: 1.4em;
+}
+.form-wrapper-top h3 {
+  text-align: center;
+  margin-top: -28px;
+  font-weight: 400;
+}
+.search.form .fa {
+  float: right;
+  font-size: 2em;
+  margin-top: -11%;
+}
+.btn-group h1, .form-wrapper.signup.login p, .details,.steps, .form_wrapper p, .modal-header h3 {
+  text-align: center;
+}
+.form-wrapper-top p {
+  margin-top: 14px;
+  text-align: center;
+}
+  
+.balance h3 {
+  float: right;
+  margin-top: 5.31%;
+  font-weight: 300;
+}
+  span {
+  font-size: 0.9em;
+  font-weight: 300;
+  }
+.details p {
+  display: inline-block;
+  padding: 0px 10px;
+}
+.details .fa, .details p {
+  font-size: 1.1em;
+  padding-top: 2.5px;
+}
+.details .fa-pencil {
+  padding-right: 10px;
+}
+.signup-text {
+  clear: both;
+  padding-top: 1px;
+  padding-left: 18px;
+}
+.signup-text h3 {
+  font-weight: 300;
+}
+.process-icons {
+  text-align: center;
+}
+.process-icons p {
+  font-size: 1.2em;
+  padding-top: 5px;
+  font-weight: 300;
+}
+.process-icons .fa {
+  font-size: 5em;
+  padding-top: 30px;
+}
+/*
+Center style
+*/
+.btn-group h1, .instructions, .upload-buttons, .review-heading {
+  text-align: center;
+}
+.upload-form, .instructions p{
+  display: inline;
+}
+.instructions h1 {
+  padding-top: 70px; 
+  font-weight: bold;
+}
+.instructions p {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+.instructions p span {
+  color: rgb(231,90,63);
+}
+.more-instructions a{
+  font-size: 0.8em;
+  text-decoration: underline;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  color: rgb(231,90,63)
+}
+.instructions #collapse-instructions p, .more-instructions a {
+  display: block;
+}
+
+#collapse-instructions p {
+  font-size: 1.1em;
+}
+#collapse-instructions {
+  padding-bottom: 10px;
+}
+input[type="file"] {
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.upload-buttons button{
+  font-weight: bold;
+}
+.upload-buttons button {
+  width: 24.6%;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.4);
+  font-size: 1.15em;
+  padding: 15px;
+  }
+ 
+
+/*
+=============================
+  Buttons
+=============================
+*/
+
+.btn {
+  border-radius: 2px;
+}
+.btn-group {
+  padding-bottom: 10px; 
+}
+.payment-btn {
+  margin-top: 3.94321766562%;
+}
+.payment-btn.contacts-btn {
+  margin-top: 11.94321766562%;
+}
+.register_btn .btn {
+  width: 100%;
+  background-color: rgb(255,126,130);
+  border-radius: 2px;
+  border-color: rgb(255,126,130);
+  box-shadow: 0px 2px 0px #E00007;
+  font-weight: 700;
+}
+.next-btn {
+  text-align: center;
+}
+button.common{
+  font-size: 1.2em;
+  font-weight: 700;
+  padding: 5px 25px;
+}
+.set-amount, .nav-btn {
+  display: inline-block;
+  width: 100%;
+}
+
+.set-amount .input-group {
+  width: 63%;
+}
+.apply-all {
+  float: right;
+  margin-top: -48px;
+}
+.next-btn.amount, .send-btn {
+  float: right;
+}
+.previous-btn {
+  float: left;
+}
+.btn.signup-next, .form-wrapper.signup.login button {
+  border: none;
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4em;
+  background-color: #25AAE1;
+}
+.btn.form-wrapper.packages.subscribe {
+  display: block;
+  width: 100%;
+  background-color: #1A8BB9;
+  border-color: #1A8BB9;
+  font-size: 1.4em;
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+.btn.form-wrapper.packages.subscribe:hover {
+  background-color: #E75A3F;
+  border-color: #E75A3F;
+}
+.upload-buttons .btn-lg, .upload-buttons input[type="submit"] {
+  font-weight: bold;
+}
+.upload-buttons .btn-lg {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  box-shadow: 2px 2px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.upload-buttons .fa {
+  padding-right: 10px;
+}
+.upload-buttons input[type="submit"] {
+  width: 10%;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.4);
+  
+  
+}
+/*
+=============================
+  Colors
+=============================
+*/
+
+.form-wrapper a {
+  color: #000;
+}
+.form-wrapper .register-link{
+  color: red;
+}
+hr {
+  border-color: #ccc;
+}
+/*
+=============================
+  Layout
+=============================
+*/
+
+.new-payment {
+  max-width: 72%;
+  margin: 0 auto;
+}
+.signup-left {
+  padding-top: 22px;
+}
+

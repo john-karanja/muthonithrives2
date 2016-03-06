@@ -1,0 +1,37 @@
+{% extends "templates/includes.html" %}
+{% block content %}
+
+      <h4><small>select blog to edit</small></h4>
+      <hr>
+        {% for b in blogedit %}
+
+
+        <form action="/edit" method="post">
+
+              <h5><span class="glyphicon glyphicon-time"></span> {{b.blogger}}, {{b.date}}.</h5>
+              <h5><span class="label label-success">edit this blog</span></h5><br>
+              <p><textarea name="title" class="form-control" rows="1" style="color:#3BB9FF" required>{{b.title}}</textarea></p>
+            <p><textarea name="image" class="form-control" rows="1" style="color:#3BB9FF">{{b.image}}</textarea></p>
+              <textarea name="content" id="editor1" rows="10" cols="80">
+                  {{b.content}}
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+
+
+                    <!--<input name="key" type="text" class="form-control" value="{{b.key.id()}}"> -->
+            <button align="right" type="submit" name="id" value="{{b.key.id()}}">Done</button>
+              <hr>
+        </form>
+
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
