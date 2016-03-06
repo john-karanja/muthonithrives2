@@ -112,7 +112,11 @@
    <script src="static/menu/script.js"></script>
 </head>
 <body>
+
+<div class="container">
+
 <div id="fb-root"></div>
+
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -125,7 +129,7 @@
 
 
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-12 col-md-offset-0">
 <div id="headdiv" class="container-fluid text-center">.
    <!--- <img src="static/images/logo.PNG" class="img-responsive margin" alt="Image" style="width:150px;height:100px;"> -->
   <h1 align="right" style="color:#3BB9FF"></h1><br/><br/>
@@ -165,7 +169,7 @@
 
           <!--<a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="Aboue_">Tweet</a> -->
 
-          <a href="https://twitter.com/intent/tweet?button_hashtag=MuthoniThrives" class="twitter-hashtag-button" data-related="Aboue_">Tweet #MuthoniThrives</a>
+          <a href="https://twitter.com/intent/tweet?button_hashtag=MuthoniThrives" class="twitter-hashtag-button" data-related="MThrives">Tweet #MuthoniThrives</a>
 
    {% for b in blog %}
     <h5><a href="/blog?title={{b.title}}">{{b.title}}</a></h5><hr>
@@ -213,5 +217,6 @@
 <footer class="container-fluid bg-2 text-center">
   <p> Designed by: <a href="http://www.webdev254.appspot.com">Web developer 254</a></p>
 </footer>
+    </div>
 </body>
 </html>

@@ -43,8 +43,8 @@ class MainHandler(webapp2.RequestHandler):
         global blog
         global comment
         regblogger = 0
-        blog = BlogDB.query(BlogDB.status == 'active')
-        comment = CommentDB.query()
+        blog = BlogDB.query(BlogDB.status == 'active').order(-BlogDB.date)
+        comment = CommentDB.query().order(-CommentDB.date)
         image = ImageDB.query()
 
 
@@ -134,7 +134,6 @@ class BlogHandler(webapp2.RequestHandler):
         bl = blog.get()
 
         title = self.request.get('title',bl.title)
-        id = self.request.get('id',bl.id)
         comment = []
 
         video = VideoDB.query()
