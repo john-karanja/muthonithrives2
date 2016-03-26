@@ -2,24 +2,27 @@
 {% block content %}
 
      {% for b in blog %}
-        <div class="col-sm-4">
+
+        <div class="col-sm-12">
             <div id="nav">
                 <div id="image">
-                {% if b.image %}
-                <img src="{{b.image}}" class="img-responsive margin"height="50%" width="100"  alt="Image">
-                {% else %}
-                <img src="static/images/logo2.PNG" class="img-responsive margin" height="30%" width="100"  alt="Image">
-                {% endif %}
-                    </div>
-                <div id="heading">
-                    <div id="btitle">
+
+                <div id="btitle">
                 <p><h5 style="font-style: italic;" align="justify"><a href="/blog?title={{b.title}}" name="title" value="{{b.title}}">{{b.title}}</a></h5></p>
-                <h6 align="left" ><a href="/blog?title={{b.title}}" name="title" value="{{b.title}}">  ...read more</a></h6>
                     </div>
-                    <div id="owner">
+                <div id="owner">
                 <h6 align="justify" ><span class="glyphicon glyphicon-time"></span> {{b.blogger}}, {{b.date.strftime('%d-%B-%Y')}}.</h6>
-                        </div>
+                </div>
+
+                <img src="{{b.image}}" class="img-responsive margin"height="50%" width="100%"  alt="Image">
+
                     </div>
+                <div id="homecontent">
+                <h6>{{b.content}}</h6>
+                    </div>
+                <div>
+                    <h6 align="right" ><a href="/blog?title={{b.title}}" name="title" value="{{b.title}}">  ...read more</a></h6>
+                </div>
             </div>
 </div>
 {% endfor %}

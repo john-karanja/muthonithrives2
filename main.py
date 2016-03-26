@@ -121,6 +121,32 @@ class RegisterHandler(webapp2.RequestHandler):
         else:
             self.redirect(users.create_login_url(self.request.uri))
 
+class AboutHandler(webapp2.RequestHandler):
+
+    def get(self):
+        global blog
+        global comment
+        regblogger = 0
+        blog = BlogDB.query(BlogDB.status == 'active').order(-BlogDB.date)
+        comment = CommentDB.query().order(-CommentDB.date)
+        image = ImageDB.query()
+
+
+        template_values = {
+            'image':image,
+            'blog':blog,
+            'comment':comment,
+            'regblogger':regblogger
+        }
+        notification = self.request.get('notification')
+        if notification:
+            template_values['notification'] = notification
+        self.response.set_status(200)
+        template = jinja2_env.get_template('templates/about.html')
+        self.response.out.write(template.render(template_values))
+
+
+
 class BlogHandler(webapp2.RequestHandler):
 
     def get(self):
@@ -593,5 +619,6 @@ app = webapp2.WSGIApplication([
     ('/logout',LogOut),
     ('/gallery',GalleryHandler),
     ('/register',RegisterHandler),
-    ('/try' , Try)
+    ('/try' , Try),
+    ('/about', AboutHandler),
 ], debug=True)
