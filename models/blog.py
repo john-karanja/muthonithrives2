@@ -10,6 +10,7 @@ class BlogDB(ndb.Model):
     content = ndb.TextProperty(default='null')
     status = ndb.StringProperty(default='active')
     date = ndb.DateTimeProperty(auto_now_add=True)
+    slug = ndb.StringProperty()
 
 
 class VideoDB(ndb.Model):

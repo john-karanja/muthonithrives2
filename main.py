@@ -24,6 +24,7 @@ from models.comment import CommentDB
 from models.blog import ImageDB
 from models.blog import VideoDB
 from google.appengine.api import users
+import re
 
 
 
@@ -145,6 +146,30 @@ class AboutHandler(webapp2.RequestHandler):
         template = jinja2_env.get_template('templates/about.html')
         self.response.out.write(template.render(template_values))
 
+class ContactHandler(webapp2.RequestHandler):
+
+    def get(self):
+        global blog
+        global comment
+        regblogger = 0
+        blog = BlogDB.query(BlogDB.status == 'active').order(-BlogDB.date)
+        comment = CommentDB.query().order(-CommentDB.date)
+        image = ImageDB.query()
+
+
+        template_values = {
+            'image':image,
+            'blog':blog,
+            'comment':comment,
+            'regblogger':regblogger
+        }
+        notification = self.request.get('notification')
+        if notification:
+            template_values['notification'] = notification
+        self.response.set_status(200)
+        template = jinja2_env.get_template('templates/contact.html')
+        self.response.out.write(template.render(template_values))
+
 
 
 class BlogHandler(webapp2.RequestHandler):
@@ -155,20 +180,25 @@ class BlogHandler(webapp2.RequestHandler):
         global comment
         global blogsl
 
-        regblogger = 0
-        blog = BlogDB.query(BlogDB.status == 'active')
-        bl = blog.get()
+        try:
+            regblogger = 0
+            blog = BlogDB.query(BlogDB.status == 'active')
+            bl = blog.get()
 
-        title = self.request.get('title',bl.title)
-        comment = []
+            slug = self.request.get('title',bl.slug)
+            comment = []
 
-        video = VideoDB.query()
-        image = ImageDB.query()
+            video = VideoDB.query()
+            image = ImageDB.query()
 
-        blogsl = BlogDB.query(BlogDB.status == 'active',BlogDB.title == title).get()
-        slid = str(blogsl.key.id())
-        if blogsl:
-            comment = CommentDB.query(CommentDB.blogid == slid)
+            blogsl = BlogDB.query(BlogDB.status == 'active',BlogDB.slug == slug).get()
+            slid = str(blogsl.key.id())
+            if blogsl:
+                comment = CommentDB.query(CommentDB.blogid == slid)
+
+        except Exception as e:
+            self.redirect('/')
+
 
         template_values = {
             'regblogger':regblogger,
@@ -254,11 +284,14 @@ class NewHandler(webapp2.RequestHandler):
                 if content == "":
                     content = str(null)
 
+                slug = slugify(title)
+
                 newblog = BlogDB(
                     blogger = blogger_,
                     title = title,
                     image = image,
                     content = content,
+                    slug = slug
 
                 )
                 newblog.put()
@@ -289,7 +322,6 @@ class EditHandler(webapp2.RequestHandler):
 
                 id = self.request.get('id')
                 myblog = BlogDB.query(BlogDB.blogger == thisuser.username)
-
                 for b in myblog:
                     myblogs2edit.append(b)
 
@@ -326,12 +358,14 @@ class EditHandler(webapp2.RequestHandler):
                 image = self.request.get('image')
                 content = self.request.get('content')
                 id = self.request.get('id')
+                slug = slugify(title)
 
                 blog = BlogDB.get_by_id(int(id))
 
                 blog.title = title
                 blog.image = image
                 blog.content = content
+                blog.slug = slug
                 blog.put()
 
                 self.redirect('/edit')
@@ -609,6 +643,44 @@ class LogOut(webapp2.RequestHandler):
 
             self.response.out.write("<html><body>%s</body></html>" % sign)
 
+
+def slugify(s):
+    """
+    Simplifies ugly strings into something URL-friendly.
+    """
+
+    # "[Some] _ Article's Title--"
+    # "[some] _ article's title--"
+    s = s.lower()
+
+    # "[some] _ article's_title--"
+    # "[some]___article's_title__"
+    for c in [' ', '-', '.', '/']:
+        s = s.replace(c, '_')
+
+    # "[some]___article's_title__"
+    # "some___articles_title__"
+    s = re.sub('\W', '', s)
+
+    # "some___articles_title__"
+    # "some   articles title  "
+    s = s.replace('_', ' ')
+
+    # "some   articles title  "
+    # "some articles title "
+    s = re.sub('\s+', ' ', s)
+
+    # "some articles title "
+    # "some articles title"
+    s = s.strip()
+
+    # "some articles title"
+    # "some-articles-title"
+    s = s.replace(' ', '-')
+
+    return s
+
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/new', NewHandler),
@@ -621,4 +693,5 @@ app = webapp2.WSGIApplication([
     ('/register',RegisterHandler),
     ('/try' , Try),
     ('/about', AboutHandler),
+    ('/contact',ContactHandler)
 ], debug=True)

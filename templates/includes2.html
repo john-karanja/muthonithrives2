@@ -119,10 +119,22 @@
    <script src="static/menu/script.js"></script>
 </head>
 <body>
+<!-- Facebook comment plugin-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- End Facebook comment plugin-->
+
 
 <div class="container">
 
-<div id="fb-root"></div>
+<div id="fb-root2"></div>
 
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -147,7 +159,7 @@
    <li class='active'><a href='/'>Home</a></li>
    <li><a href='/blog'>Blogs</a></li>
    <li><a href='/about'>About blog</a></li>
-   <li><a href='#'>Contact</a></li>
+   <li><a href='/contact'>Contact</a></li>
    <li><a href='/new'>Blogger</a></li>
 
 
@@ -185,7 +197,7 @@
           <a href="https://twitter.com/intent/tweet?button_hashtag=MuthoniThrives" class="twitter-hashtag-button" data-related="MThrives">Tweet #MuthoniThrives</a>
 
    {% for b in blog %}
-    <h5><a href="/blog?title={{b.title}}">{{b.title}}</a></h5><hr>
+    <h5><a href="/blog?title={{b.slug}}">{{b.title}}</a></h5><hr>
     {% endfor %}
 
 
