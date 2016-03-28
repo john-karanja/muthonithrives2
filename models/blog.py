@@ -13,6 +13,13 @@ class BlogDB(ndb.Model):
     slug = ndb.StringProperty()
 
 
+class newsletterDB(ndb.Model):
+    name = ndb.StringProperty()
+    email = ndb.StringProperty()
+    status = ndb.StringProperty(default='subscribed')
+    date = ndb.DateTimeProperty(auto_now_add=True)
+
+
 class VideoDB(ndb.Model):
     name = ndb.StringProperty(default='name')
     link = ndb.StringProperty(default='link')

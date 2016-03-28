@@ -184,11 +184,41 @@
 
   </div>
   <div class="col-md-4 col-md-offset-0" id="topblogs">
+
+
       <div class="row">
                 <div align="right">
                <a href="https://www.facebook.com/Muthoni-Thrives-503765333120264" target="_blank"><img src="images/social/facebook-icon.png" alt=""></a>
                <a href="https://twitter.com/MThrives" target="_blank"><img src="images/social/twitter-icon.png" alt=""></a>
               </div>
+
+
+      <div>
+          <form role="form" action="/newsletter" method="post" >
+              <p><h3 style="color:#3BB9FF">Newsletter Sign-Up here</h3></p>
+              {% if notification == 'success' %}
+            <div class="alert alert-success">
+              <small><strong>Success!</strong> we have recieved your info.</small>
+            </div>
+              {% elif notification== 'error' %}
+            <div class="alert alert-warning">
+              <small><strong>Warning!</strong>your info was not captured</small>
+            </div>
+              {% else %}
+              {% endif %}
+             <div class="form-group">
+              <label for="usr" style="color:#777777">Name:</label>
+              <input type="text" class="form-control" placeholder="ruth sly" id="usr" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1" style="color:#777777">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ruth@domain.com" name="email" required>
+              </div>
+              <button type="submit" class="btn btn-default" value="newsletter">sign up</button>
+          </form>
+      </div>
+
+
       <h1 style="color:#3BB9FF">TOP BLOGS</h1><br/>
 
 
@@ -209,6 +239,7 @@
     <div class="fb-follow" data-href="https://www.facebook.com/Muthoni-Thrives-503765333120264" data-width="100" data-layout="standard" data-show-faces="true"></div>
     <!--End Facebook follow button-->
 </div>
+
 
       </div>
 

@@ -18,11 +18,9 @@ import webapp2
 import jinja2
 import os
 from google.appengine.api import mail
-from models.blog import BlogDB
+from models.blog import BlogDB,ImageDB, VideoDB, newsletterDB
 from models.blogger import BloggerDB
 from models.comment import CommentDB
-from models.blog import ImageDB
-from models.blog import VideoDB
 from google.appengine.api import users
 import re
 
@@ -295,6 +293,15 @@ class NewHandler(webapp2.RequestHandler):
 
                 )
                 newblog.put()
+
+                subscribers = newsletterDB.query()
+                for sub in subscribers:
+                    submail = sub.email
+                    name = sub.name
+                    dom = 'http://muthonithrives.com/blog?title='
+                    link = str(dom+slug)
+
+                    newslettermail(submail,name, title, blogger_,link)
 
                 self.redirect('/new')
 
@@ -680,6 +687,52 @@ def slugify(s):
 
     return s
 
+class NewsletterHandler(webapp2.RequestHandler):
+    def post(self):
+        name = self.request.get('name'),
+        email =self.request.get('email')
+
+        if name!="" and email!="":
+            signup(name,email)
+        else:
+            self.redirect('/?notification=error')
+
+        self.redirect('/?notification=success')
+
+
+    # Newsletter sign up
+def signup(name,email):
+
+        new = newsletterDB(
+            name = str(name),
+            email = str(email)
+        )
+        new.put()
+
+
+
+def newslettermail(submail,title,name,blogger_,link):
+
+            message = mail.EmailMessage(sender="Newsletter MThrives <newsletter@muthonithrives.appspotmail.com>",
+                                        subject="New Article")
+
+            message.to = submail
+            message.body = """
+
+            Dear %s:
+
+                A new blog %s from Muthoni thrives by %s  is out.  You can now visit
+                muthoni thrives and have a look.
+
+                Like, share and comment.
+
+                Regards.
+
+                The Muthoni Thrives Team
+                    """ % (title,name,blogger_)
+
+            message.send()
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
@@ -693,5 +746,6 @@ app = webapp2.WSGIApplication([
     ('/register',RegisterHandler),
     ('/try' , Try),
     ('/about', AboutHandler),
-    ('/contact',ContactHandler)
+    ('/contact',ContactHandler),
+    ('/newsletter', NewsletterHandler)
 ], debug=True)
