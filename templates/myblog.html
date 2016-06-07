@@ -1,10 +1,53 @@
 {% extends "templates/includes2.html" %}
 {% block content %}
 
+<style>
+    /* This gets Google to fall into place */
+    .social {
+        font-size: 1px;
+    }
+
+    /* This gets Facebook to fall into place */
+    .social iframe {
+        vertical-align: bottom;
+    }
+
+    /* Set an optional width for your button wrappers */
+    .social span {
+        display: inline-block;
+        width: 110px;
+    }
+
+    /* Adjust the widths individually if you like */
+    .social .google {
+        width: 75px;
+    }
+
+</style>
+
+
 
       <div class="row">
             <div class="col-md-11 col-md-offset-1">
-                <h3 style="color:#3BB9FF">{{blogsl.title}}</h3> <!---<a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="MThrives">Tweet</a>-->
+                <h1 style="color:#3BB9FF">{{blogsl.title}}</h1>
+
+                    <div class="social">
+                        <span class="Facebook">
+                            <div class="fb-share-button" data-href="http://muthonithrives.com/blog?title={{blogsl.slug}}" data-layout="button_count"></div>
+                        </span>
+                        <span class="twitter">
+                            <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="MThrives">Tweet</a>
+                        </span>
+                        <!--
+                        <span class="google">
+                            <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"></div>
+                        </span>
+                        -->
+                        <span class="google">
+                            <div class="g-plus" data-action="share"></div>
+                        </span>
+                    </div>
+
             <div align="justify" >
                 {{blogsl.content}}
             </div>
