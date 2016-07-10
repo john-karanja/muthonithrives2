@@ -61,6 +61,13 @@ class MainHandler(webapp2.RequestHandler):
         self.response.out.write(template.render(template_values))
 
 
+class NewIndex(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+        self.response.set_status(200)
+        template = jinja2_env.get_template('templates/newindex.html')
+        self.response.out.write(template.render(template_values))
+
 
 class RegisterHandler(webapp2.RequestHandler):
 
@@ -747,5 +754,6 @@ app = webapp2.WSGIApplication([
     ('/try' , Try),
     ('/about', AboutHandler),
     ('/contact',ContactHandler),
-    ('/newsletter', NewsletterHandler)
+    ('/newsletter', NewsletterHandler),
+    ('/newindex', NewIndex)
 ], debug=True)
