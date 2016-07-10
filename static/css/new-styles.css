@@ -1,20 +1,34 @@
 body {
 	font-family: 'Open Sans','Roboto',sans-serif,helvetica;
 	line-height: 1.5;
+	background-color: #f7f7f7;
+	color: #3c3c3b;
 }
 /****************
 Navigation
 *****************/
+.navbar-default {
+	background-color: #fff;
+	border-radius: 0;
+}
 .navbar ul img {
 	width: 100px;
 }
 .navbar ul li{
 	display: inline-block;
+	font-size: 1.3em;
+	margin: 0 5px;
 	
 }
 .navbar ul {
 	text-align: center;
 	padding: 10px 0;
+}
+/****************
+Colors
+*****************/
+hr {
+	border-color: #ccc;
 }
 /****************
 Typography
@@ -25,15 +39,58 @@ Typography
 .main-stream-time-date h4:nth-child(2) {
 	float: right;
 }
+.main-stream .main-stream-start-text p{
+	margin-top: 30px;
+	font-size: 1.2em;
+	color: #646464;
+}
+.quick-stream-title-date-less h4 {
+	font-size: 1em;
+	font-weight: 600;
+}
+.quick-stream-title-date-less {
+	position: relative;
+	top: 5px;
+	left: 10px;
+}
+.quick-stream-title-date h4:nth-child(1) {
+	font-size: 1.1em;
+	font-weight: 600;
+} 
+.quick-stream-title-date h4:nth-child(2) {
+	font-size: 1em;
+	font-weight: 300;
+} 
+.quick-stream-box .fa {
+	font-size: 1.3em
+}
+.quick-stream-icon .fa {
+	font-size: 1em;
+}
 /****************
 Layouts
 *****************/
 .quick-stream-blog, .main-stream-item {
-	border: 1px solid;
 	padding: 20px;
+	background-color: #fff;;
+	box-shadow: 0 0 1px rgba(0,0,0,0.2);
+	border-radius: 0.5px;
+}
+.quick-stream-box {
+	margin-bottom: 40px ;
 }
 .main-stream-item {
-	margin-bottom: 30px;
+	margin-bottom: 50px;
+	padding: 40px;
+}
+.quick-stream-blog-less {
+	margin-top: -30px;
+}
+.quick-stream-blog .quick-stream-icon {
+	float: right;
+	position: relative;
+	top: 15px;
+	font-size: 1.3em;
 }
 
 /****************
@@ -43,8 +100,44 @@ Images
 	max-width: 100%;
 }
 .main-stream-item img {
-	max-width: 100%;
+	width: 100%;
 }
 .quick-stream-blog-less img {
 	max-width: 30%;
+}
+
+/****************
+Form
+*****************/
+.quick-stream-box form input{
+	border-radius: 1px;
+	box-shadow: none;
+	height: 40px
+}
+.quick-stream-box form input:focus {
+	box-shadow: none;
+}
+/****************
+Buttons
+*****************/
+.btn-default {
+	background-color: transparent;
+	box-shadow: none;
+	border: 1px solid #c3c3c3;
+	border-radius: 0;
+	padding: 15px;
+	width: 50%;
+	font-weight: 600;
+	font-size: 1.2em;
+}
+.btn-default:hover {
+	border-color: #00aced;
+	color: #00aced;
+	background-color: transparent;
+}
+.quick-stream-box form button {
+  width: 100%;
+}
+.main-stream .btn-default {
+	margin: 30px 0
 }
