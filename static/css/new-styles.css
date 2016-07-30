@@ -1,7 +1,7 @@
 body {
-	font-family: 'Open Sans','Roboto',sans-serif,helvetica;
+	font-family: 'Roboto','Open Sans',sans-serif,helvetica;
 	line-height: 1.5;
-	background-color: #f7f7f7;
+	background-color: #f4f4f4;
 	color: #3c3c3b;
 }
 /****************
@@ -40,8 +40,8 @@ Typography
 	float: right;
 }
 .main-stream .main-stream-start-text p{
-	margin-top: 30px;
-	font-size: 1.2em;
+	margin: 30px 0;
+	font-size: 1.1em;
 	color: #646464;
 }
 .quick-stream-title-date-less h4 {
@@ -50,69 +50,124 @@ Typography
 }
 .quick-stream-title-date-less {
 	position: relative;
-	top: 5px;
-	left: 10px;
+	top: 7px;
+	left: 25px;
 }
-.quick-stream-title-date h4:nth-child(1) {
-	font-size: 1.1em;
-	font-weight: 600;
+.quick-stream-title-date h4 a:nth-child(1), .quick-stream-blog-less h4 a:nth-child(1) {
+	font-size: 0.9em;
+	font-weight: 800;
+	color: black;
 } 
-.quick-stream-title-date h4:nth-child(2) {
-	font-size: 1em;
+.quick-stream-title-date h4:nth-child(2), .quick-stream-blog-less h4:nth-child(2) {
+	font-size: 0.9em;
 	font-weight: 300;
 } 
 .quick-stream-box .fa {
-	font-size: 1.3em
+	font-size: 1.5em;
+	padding: 15px 0;
+	color: #646464;
+}
+.quick-stream-box .fa:hover {
+	color: black;
 }
 .quick-stream-icon .fa {
 	font-size: 1em;
 }
+.quick-stream-box p.bio {
+	font-weight: 300;
+		color: #646464;
+}
+.quick-stream h4 a:hover {
+  color: #00aced;
+	text-decoration: none;
+}
 /****************
 Layouts
 *****************/
-.quick-stream-blog, .main-stream-item {
+.quick-stream, .main-stream {
 	padding: 20px;
-	background-color: #fff;;
-	box-shadow: 0 0 1px rgba(0,0,0,0.2);
-	border-radius: 0.5px;
 }
+.quick-stream-blog{
+	padding: 10px;
+	background-color: #fff;
+	border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+	border-right: solid 1px rgba(160, 160, 160, 0.3);
+  border-left: solid 1px rgba(160, 160, 160, 0.3);
+}
+.top-posts img {
+	border-top: solid 1px rgba(160, 160, 160, 0.3);
+	border-right: solid 1px rgba(160, 160, 160, 0.3);
+  border-left: solid 1px rgba(160, 160, 160, 0.3);
+}
+
 .quick-stream-box {
-	margin-bottom: 40px ;
+  border-bottom: dotted 1px rgba(160, 160, 160, 0.5);
+	padding: 20px 0;
 }
 .main-stream-item {
-	margin-bottom: 50px;
-	padding: 40px;
 }
-.quick-stream-blog-less {
-	margin-top: -30px;
+
+.main-stream-time-date, .main-stream-start-text {
+	background-color: #fff;
+	padding: 20px;
+	margin-bottom: 0px;
 }
-.quick-stream-blog .quick-stream-icon {
+.main-stream-start-text {
+	border-right: solid 1px rgba(160, 160, 160, 0.3);
+  border-left: solid 1px rgba(160, 160, 160, 0.3);
+	border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+}
+.main-stream-time-date {
+	border-top: solid 1px rgba(160, 160, 160, 0.3);
+	border-right: solid 1px rgba(160, 160, 160, 0.3);
+  border-left: solid 1px rgba(160, 160, 160, 0.3);
+	border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+}
+ .quick-stream-icon {
 	float: right;
 	position: relative;
 	top: 15px;
 	font-size: 1.3em;
 }
-
+.main-stream-item {
+	margin-bottom: 50px;
+}
 /****************
 Images
 *****************/
-.quick-stream-blog img {
-	max-width: 100%;
+
+.top-posts img {
+  width: 100%;
+	position: relative;
+}
+.main-stream-item, .top-posts  {
+	overflow: hidden;
+	width: 100%;
+}
+.top-posts img, .main-stream-item img {
+	transition: transform .2s ease;
+}
+.top-posts img:hover, .main-stream-item img:hover {
+	transform: scale(1.05);
 }
 .main-stream-item img {
 	width: 100%;
 }
 .quick-stream-blog-less img {
-	max-width: 30%;
+	width: 18.4372094493%;
+	height: 70px;
 }
-
+.logo-img img {
+	max-width: 25%;
+}
 /****************
 Form
 *****************/
 .quick-stream-box form input{
 	border-radius: 1px;
 	box-shadow: none;
-	height: 40px
+	height: 40px;
+	border-color: rgba(160, 160, 160, 0.3);
 }
 .quick-stream-box form input:focus {
 	box-shadow: none;
@@ -123,11 +178,11 @@ Buttons
 .btn-default {
 	background-color: transparent;
 	box-shadow: none;
-	border: 1px solid #c3c3c3;
+	border: 1px solid rgba(160, 160, 160, 0.3);
 	border-radius: 0;
 	padding: 15px;
 	width: 50%;
-	font-weight: 600;
+	font-weight: 800;
 	font-size: 1.2em;
 }
 .btn-default:hover {
