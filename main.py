@@ -73,7 +73,14 @@ class ReadBlog(webapp2.RequestHandler):
         template_values = {}
         self.response.set_status(200)
         template = jinja2_env.get_template('templates/readblog.html')
-        self.response.out.write(template.render(template_values))       
+        self.response.out.write(template.render(template_values)) 
+
+class AboutPage(webapp2.RequestHandler):
+    def get(self):
+        template_values = {}
+        self.response.set_status(200)
+        template = jinja2_env.get_template('templates/aboutpage.html')
+        self.response.out.write(template.render(template_values))              
 
 
 class RegisterHandler(webapp2.RequestHandler):
@@ -763,5 +770,6 @@ app = webapp2.WSGIApplication([
     ('/contact',ContactHandler),
     ('/newsletter', NewsletterHandler),
     ('/newindex', NewIndex),
-    ('/readblog', ReadBlog)
+    ('/readblog', ReadBlog),
+    ('/aboutpage', AboutPage)
 ], debug=True)
