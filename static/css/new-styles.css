@@ -1,8 +1,22 @@
 body {
 	font-family: 'Roboto','Open Sans',sans-serif,helvetica;
 	line-height: 1.5;
-	background-color: #f4f4f4;
+	background-color: #fcfcfc;
 	color: #3c3c3b;
+}
+.jumbotron {
+background:  linear-gradient(
+  rgba(0,0,0,0.85), 
+  rgba(0,0,0, 0.85)
+  ),url("../images/rain.jpg");
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  height: 600px;
+	  margin-bottom: 0;
+}
+.slider img {
+	width: 100%;
+	height: 600px;
 }
 /****************
 Navigation
@@ -10,6 +24,8 @@ Navigation
 .navbar-default {
 	background-color: #fff;
 	border-radius: 0;
+	border: none;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 .navbar ul img {
 	width: 100px;
@@ -131,6 +147,24 @@ Layouts
 }
 .main-stream-item {
 	margin-bottom: 50px;
+}
+.article img {
+	width: 100%;
+	height: 300px;
+}
+.article {
+	background-color: #fff;
+	box-shadow: 0 0 0px 1px rgba(0,0,0,0.1);
+	font-family: 'Oxygen', sans-serif;
+	padding: 30px;
+	z-index: 1000;
+	margin-top: 40px;
+}
+.article-text p {
+	font-size: 1.2em;
+	line-height: 2.4;
+	font-weight: 400;
+	margin: 50px 0;
 }
 /****************
 Images
